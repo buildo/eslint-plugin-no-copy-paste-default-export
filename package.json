@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start",
+    "test": "npm run build && mocha tests --recursive",
     "build": "rm -rf lib && mkdir lib && babel --loose --stage 0 --out-dir lib src",
     "lint": "eslint src",
     "preversion": "npm run lint && npm run test && npm run build-examples",
@@ -28,7 +28,9 @@
   "peerDependencies": {
     "eslint": ">=0.8.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "mocha": "^2.2.5"
+  },
   "devDependencies": {
     "babel": "^5.4.7",
     "babel-eslint": "^3.1.11",
@@ -36,20 +38,7 @@
     "eslint": "^0.23.0",
     "eslint-loader": "^0.14.0",
     "eslint-plugin-react": "^2.5.2",
-    "expect": "^1.6.0",
-    "isparta-loader": "^0.2.0",
-    "karma": "^0.12.36",
-    "karma-bamboo-reporter": "^0.1.0",
-    "karma-chrome-launcher": "^0.1.12",
-    "karma-coverage": "^0.3.1",
-    "karma-mocha": "^0.1.10",
-    "karma-webpack": "^1.5.1",
-    "lodash": "^3.9.3",
-    "mocha": "^2.2.5",
-    "node-libs-browser": "^0.5.2",
-    "react": "^0.13.3",
-    "require-dir": "^0.3.0",
-    "webpack": "^1.9.12",
-    "webpack-dev-server": "^1.9.0"
+    "eslint-tester": "^0.8.2",
+    "webpack": "^1.9.12"
   }
 }

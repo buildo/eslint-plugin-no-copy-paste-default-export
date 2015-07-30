@@ -1,22 +1,13 @@
-const RULE = 'default';
-const classNameMatch = /export[\s]+default[\s]+class[\s]+([\S]+)/i;
+const RULES = ['default'];
 
 export default {
-  rules: {
-    [RULE]: context => ({
-      'ExportDefaultDeclaration': node => {
-        const parts = context.getFilename().split('/');
-        const filename = parts[parts.length - 1].replace(/\..+$/, '');
-        const match = classNameMatch.exec(context.getSource(node));
+  rules: RULES.reduce((ac, r) => ({
+    ...ac,
+    [r]: require(`./rules/${r}`)
+  }), {}),
 
-        if (match && match[1] !== filename) {
-          context.report(node, `(class name) ${match[1]} !== ${filename} (file name)`);
-        }
-      }
-    })
-  },
-
-  rulesConfig: {
-    [RULE]: 2
-  }
+  rulesConfig: RULES.reduce((ac, r) => ({
+    ...ac,
+    [r]: require(`./rules/${r}`).meta.config
+  }), {})
 };
