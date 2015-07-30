@@ -16,7 +16,8 @@
     "url": "git@github.com:buildo/eslint-plugin-no-copy-paste-default-export"
   },
   "keywords": [
-    "eslint", "eslintplugin"
+    "eslint",
+    "eslintplugin"
   ],
   "author": "Giovanni Gonzaga <giovanni@buildo.io>",
   "license": "MIT",
@@ -24,6 +25,9 @@
     "url": "https://github.com/buildo/eslint-plugin-no-copy-paste-default-export/issues"
   },
   "homepage": "https://github.com/buildo/eslint-plugin-no-copy-paste-default-export",
+  "peerDependencies": {
+    "eslint": ">=0.8.0"
+  },
   "dependencies": {},
   "devDependencies": {
     "babel": "^5.4.7",
