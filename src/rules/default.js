@@ -12,7 +12,7 @@ module.exports = function(context) {
       }
     }
   };
-}
+};
 
 module.exports.meta = {
   config: 2
