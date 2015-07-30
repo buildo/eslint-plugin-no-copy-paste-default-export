@@ -1,13 +1,13 @@
 {
   "name": "eslint-plugin-no-copy-paste-default-export",
   "version": "0.0.1",
-  "description": "",
+  "description": "no more copy-pasted classes with wrong display name",
   "main": "index.js",
   "scripts": {
     "test": "npm run build && mocha tests --recursive",
     "build": "rm -rf lib && mkdir lib && babel --loose --stage 0 --out-dir lib src",
     "lint": "eslint src",
-    "preversion": "npm run lint && npm run test && npm run build-examples",
+    "preversion": "npm run lint && npm run test",
     "postversion": "git push && git push --tags",
     "prepublish": "npm run build"
   },
