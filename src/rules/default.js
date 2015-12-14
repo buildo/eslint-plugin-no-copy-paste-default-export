@@ -1,10 +1,10 @@
+import path from 'path';
 const classNameMatch = /export[\s]+default[\s]+class[\s]+([\S]+)/i;
 
 module.exports = function(context) {
   return {
     'ExportDefaultDeclaration': node => {
-      const parts = context.getFilename().split('/');
-      const filename = parts[parts.length - 1].replace(/\..+$/, '');
+      const filename = path.parse(context.getFilename()).name;
       const match = classNameMatch.exec(context.getSource(node));
 
       if (match && match[1] !== filename) {
