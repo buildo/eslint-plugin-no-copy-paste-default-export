@@ -28,9 +28,6 @@
   "peerDependencies": {
     "eslint": ">=0.8.0"
   },
-  "dependencies": {
-    "mocha": "^2.2.5"
-  },
   "devDependencies": {
     "babel": "^5.4.7",
     "babel-eslint": "^3.1.11",
@@ -39,6 +36,7 @@
     "eslint-loader": "^0.14.0",
     "eslint-plugin-react": "^2.5.2",
     "eslint-tester": "^0.8.2",
+    "mocha": "^2.2.5",
     "webpack": "^1.9.12"
   }
 }
