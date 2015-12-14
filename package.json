@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-no-copy-paste-default-export",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "no more copy-pasted classes with wrong display name",
   "main": "index.js",
   "scripts": {
